@@ -4,6 +4,8 @@ import { useEffect } from "react"
 import { useRouter, useParams } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 import courses from "@/data/courses.json"
+import toast from "react-hot-toast"
+
 
 export default function CourseDetails() {
   const { id } = useParams()

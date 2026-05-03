@@ -2,16 +2,17 @@
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast"
 
 export default function Navbar() {
   const { data: session, isPending } = authClient.useSession();
   const router = useRouter();
 
-  const handleLogout = async () => {
-    await authClient.signOut();
-    router.push("/auth/signin");
-    router.refresh();
-  };
+ const handleLogout = async () => {
+  await authClient.signOut();
+  toast.success("Logged out successfully");
+  router.push("/auth/signin");
+};
 
   // Small loader while checking session (prevents flicker)
   if (isPending) {
