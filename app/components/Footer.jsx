@@ -21,16 +21,32 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div>
-          <h3 className="font-semibold mb-3">Legal</h3>
-          <div className="flex flex-col gap-2 text-gray-400">
-            <Link href="#">Terms & Conditions</Link>
-            <Link href="#">Privacy Policy</Link>
-            <Link href="#">Facebook</Link>
-            <Link href="#">Twitter</Link>
-            <Link href="#">LinkedIn</Link>
-          </div>
-        </div>
+{/* Links */}
+<div>
+  <h3 className="font-semibold mb-3">Legal</h3>
+
+  <div className="flex flex-col gap-2 text-gray-400">
+    <Link href="/terms" className="hover:text-white transition">
+      Terms & Conditions
+    </Link>
+
+    <Link href="/privacy" className="hover:text-white transition">
+      Privacy Policy
+    </Link>
+
+    <a href="#" className="hover:text-white transition">
+      Facebook
+    </a>
+
+    <a href="#" className="hover:text-white transition">
+      Twitter
+    </a>
+
+    <a href="#" className="hover:text-white transition">
+      LinkedIn
+    </a>
+  </div>
+</div>
 
       </div>
 
