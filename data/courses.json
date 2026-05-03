@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch using MERN.",
+    "image": "https://i.postimg.cc/m2m3z7S9/web-dev.png",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced Next.js Mastery",
+    "instructor": "Jane Smith",
+    "duration": "15 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Master the App Router, Server Actions, and SEO.",
+    "image": "https://i.postimg.cc/L5X0S2Y7/nextjs.png",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Essentials",
+    "instructor": "Alex Rivera",
+    "duration": "10 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Design beautiful interfaces using Figma and Adobe XD.",
+    "image": "https://i.postimg.cc/9f0kG0Y1/uiux.png",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "Machine Learning A-Z",
+    "instructor": "Dr. Sarah Jonas",
+    "duration": "40 hours",
+    "rating": 4.6,
+    "level": "Advanced",
+    "description": "Deep dive into Python, Scikit-Learn, and TensorFlow.",
+    "image": "https://i.postimg.cc/vH4vD8n2/ml.png",
+    "category": "Data Science"
+  },
+  {
+    "id": 5,
+    "title": "Digital Marketing Strategy",
+    "instructor": "Mike Wilson",
+    "duration": "12 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Grow your business with SEO, SEM, and Social Media.",
+    "image": "https://i.postimg.cc/q7x0M1z9/marketing.png",
+    "category": "Marketing"
+  },
+  {
+    "id": 6,
+    "title": "Cybersecurity Fundamentals",
+    "instructor": "Chris Evans",
+    "duration": "25 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Protect systems from digital attacks and vulnerabilities.",
+    "image": "https://i.postimg.cc/Bv3vR0k1/cyber.png",
+    "category": "IT & Software"
+  }
+]
