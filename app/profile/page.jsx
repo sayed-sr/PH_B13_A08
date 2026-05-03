@@ -12,7 +12,16 @@ export default function Profile() {
       <div className="bg-white p-10 rounded-3xl shadow-xl border relative">
         {/* Placeholder for name initial since photo is removed */}
         <div className="w-24 h-24 bg-blue-600 text-white text-4xl font-bold rounded-full mx-auto mb-6 flex items-center justify-center -mt-20 shadow-lg">
-          {session.user.name?.charAt(0)}
+         {session.user.image ? (
+  <img
+    src={session.user.image}
+    className="w-24 h-24 rounded-full mx-auto mb-6 object-cover -mt-20 shadow-lg"
+  />
+) : (
+  <div className="w-24 h-24 bg-blue-600 text-white text-4xl font-bold rounded-full mx-auto mb-6 flex items-center justify-center -mt-20 shadow-lg">
+    {session.user.name?.charAt(0)}
+  </div>
+)}
         </div>
         <h2 className="text-3xl font-bold mb-1">{session.user.name}</h2>
         <p className="text-gray-500 mb-8">{session.user.email}</p>

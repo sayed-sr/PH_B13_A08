@@ -1,62 +1,63 @@
-"use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth-client"; 
-import courses from "@/data/courses.json";
-import CourseCard from "@/app/components/CourseCard";
+"use client"
+
+import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
+import { authClient } from "@/lib/auth-client"
+import courses from "@/data/courses.json"
+import CourseCard from "@/app/components/CourseCard"
 
 export default function AllCourses() {
-  const [query, setQuery] = useState("");
-  const { data: session, isPending } = authClient.useSession();
-  const router = useRouter();
+  const router = useRouter()
+  const { data: session, isPending } = authClient.useSession()
 
-  // Redirect logic
+  const [query, setQuery] = useState("")
+
+  // 🔒 Protect entire courses page
   useEffect(() => {
     if (!isPending && !session) {
-      router.push("/auth/signup");
+      router.push("/auth/signin?redirect=/courses")
     }
-  }, [session, isPending, router]);
+  }, [session, isPending, router])
 
-  // Show a loading state while checking authentication
   if (isPending) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
-      </div>
-    );
+      <p className="text-center py-20">
+        Loading...
+      </p>
+    )
   }
 
-  // Prevent flashing content before redirect
-  if (!session) return null;
+  if (!session) return null
 
-  const filtered = courses.filter(c => 
-    c.title.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredCourses = courses.filter((course) =>
+    course.title.toLowerCase().includes(query.toLowerCase())
+  )
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-        <h1 className="text-4xl font-bold">Discover Courses</h1>
-        <div className="w-full md:w-96 relative">
-          <input 
-            type="text" 
-            placeholder="Search by title..." 
-            className="w-full p-4 pl-12 border rounded-2xl shadow-sm focus:ring-2 focus:ring-blue-500 outline-none"
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <span className="absolute left-4 top-4 opacity-40 text-xl">🔍</span>
-        </div>
+    <div className="max-w-6xl mx-auto px-6 py-12">
+
+      <h1 className="text-4xl font-bold text-center mb-10">
+        All Courses 📚
+      </h1>
+
+      {/* Search */}
+      <div className="flex justify-center mb-10">
+        <input
+          type="text"
+          placeholder="Search courses..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-full max-w-md p-3 border rounded-xl"
+        />
       </div>
 
-      {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {filtered.map(c => <CourseCard key={c.id} course={c} />)}
-        </div>
-      ) : (
-        <div className="text-center py-20">
-          <p className="text-2xl text-gray-400">No courses match your search.</p>
-        </div>
-      )}
+      {/* Courses */}
+      <div className="grid md:grid-cols-3 gap-6">
+        {filteredCourses.map((course) => (
+          <CourseCard key={course.id} course={course} />
+        ))}
+      </div>
+
     </div>
-  );
+  )
 }

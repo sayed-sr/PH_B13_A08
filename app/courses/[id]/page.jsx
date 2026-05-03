@@ -1,39 +1,80 @@
-"use client";
-import { authClient } from "@/lib/auth-client";
-import { useRouter, useParams } from "next/navigation";
-import { useEffect } from "react";
-import courses from "@/data/courses.json";
+"use client"
 
-export default function ProtectedCoursePage() {
-    const { data: session, isPending } = authClient.useSession();
-    const router = useRouter();
-    const { id } = useParams();
-    const course = courses.find(c => c.id == id);
+import { useEffect } from "react"
+import { useRouter, useParams } from "next/navigation"
+import { authClient } from "@/lib/auth-client"
+import courses from "@/data/courses.json"
 
-    useEffect(() => {
-        if (!isPending && !session) {
-            router.push("/auth/signin");
-        }
-    }, [session, isPending, router]);
+export default function CourseDetails() {
+  const { id } = useParams()
+  const router = useRouter()
 
-    if (isPending) return <p className="p-20 text-center">Checking Authentication...</p>;
-    if (!session) return null;
+  const { data: session, isPending } = authClient.useSession()
 
+  const course = courses.find((c) => c.id == id)
+
+  // 🔒 Protected Route + redirect back logic
+  useEffect(() => {
+    if (!isPending && !session) {
+      router.push(`/auth/signin?redirect=/courses/${id}`)
+    }
+  }, [session, isPending, router, id])
+
+  if (isPending) {
     return (
-        <div className="max-w-4xl mx-auto py-20 px-4">
-            <h1 className="text-5xl font-black mb-6">{course?.title}</h1>
-            <div className="aspect-video bg-gray-200 rounded-3xl mb-10 overflow-hidden">
-                <img src={course?.image} className="w-full h-full object-cover" />
-            </div>
-            <div className="prose prose-lg">
-                <h2 className="text-2xl font-bold">Course Curriculum</h2>
-                <p>Welcome, {session.user.name}! As a premium student, you have full access.</p>
-                <ul className="mt-4 space-y-2">
-                    <li>Module 1: Introduction to Advanced Concepts</li>
-                    <li>Module 2: Real-world Implementation</li>
-                    <li>Module 3: Final Deployment</li>
-                </ul>
-            </div>
-        </div>
-    );
+      <p className="text-center py-20">
+        Loading course...
+      </p>
+    )
+  }
+
+  if (!session) return null
+
+  if (!course) {
+    return (
+      <p className="text-center py-20">
+        Course not found
+      </p>
+    )
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-12">
+
+      {/* Title */}
+      <h1 className="text-4xl font-bold mb-4">
+        {course.title}
+      </h1>
+
+      {/* Image */}
+      <img
+        src={course.image}
+        className="w-full h-64 object-cover rounded-xl mb-6"
+      />
+
+      {/* Info */}
+      <div className="space-y-2 mb-8">
+        <p><strong>Instructor:</strong> {course.instructor}</p>
+        <p><strong>Duration:</strong> {course.duration}</p>
+        <p><strong>Level:</strong> {course.level}</p>
+        <p><strong>Rating:</strong> ⭐ {course.rating}</p>
+        <p className="text-gray-600">{course.description}</p>
+      </div>
+
+      {/* Curriculum (Static requirement) */}
+      <div className="bg-gray-100 p-6 rounded-xl">
+        <h2 className="text-xl font-bold mb-4">
+          Course Curriculum
+        </h2>
+
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Introduction & Setup</li>
+          <li>Core Concepts</li>
+          <li>Hands-on Projects</li>
+          <li>Final Assessment</li>
+        </ul>
+      </div>
+
+    </div>
+  )
 }

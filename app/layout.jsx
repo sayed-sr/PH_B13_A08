@@ -1,22 +1,22 @@
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import { Toaster } from "react-hot-toast";
+import "./globals.css"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 export const metadata = {
-  title: "SkillSphere | Upgrade Your Skills",
-  description: "Learn from industry experts",
-};
+  title: "SkillSphere",
+  description: "Upgrade your skills with industry experts",
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html  lang="en">
-      <body suppressHydrationWarning className="bg-gray-50 text-slate-900 flex flex-col min-h-screen">
-        <Toaster position="top-center" reverseOrder={false} />
+    <html lang="en">
+      <body className="bg-gray-50">
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="min-h-screen max-w-6xl mx-auto px-4">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
-  );
+  )
 }
