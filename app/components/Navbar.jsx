@@ -41,57 +41,49 @@ export default function Navbar() {
           <Link href="/profile">My Profile</Link>
         </div>
 
-        {/* Auth Section */}
-        <div>
-          {session ? (
-            <div className="flex items-center gap-4">
-              
-              {/* User Name */}
-              <span className="font-semibold text-sm hidden md:block">
-                {session.user.name}
-              </span>
+       
+       {/* Auth Section */}
+<div>
+  {session?.user ? (
+    <div className="flex items-center gap-4">
 
-              {/* ✅ REAL USER AVATAR IMAGE */}
-              {session.user.image ? (
-                <img
-                  src={session.user.image}
-                  alt="avatar"
-                  className="w-10 h-10 rounded-full object-cover border"
-                />
-              ) : (
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold border">
-             {session.user.image ? (
-  <img
-    src={session.user.image}
-    className="w-10 h-10 rounded-full object-cover border"
-  />
-) : (
-  <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold border">
-    {session.user.name?.charAt(0)}
-  </div>
-)}
-                </div>
-              )}
+      {/* User Name */}
+      <span className="font-semibold text-sm hidden md:block">
+        {session.user.name ?? "User"}
+      </span>
 
-              {/* Logout */}
-              <button
-                onClick={handleLogout}
-                className="text-red-500 text-sm font-bold hover:underline"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div className="flex gap-4">
-              <Link href="/auth/signin" className="px-5 py-2 border rounded-xl hover:bg-gray-50">
-                Login
-              </Link>
-              <Link href="/auth/signup" className="px-5 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
-                Register
-              </Link>
-            </div>
-          )}
+      {/* Avatar */}
+      {session.user.image ? (
+        <img
+          src={session.user.image}
+          alt="avatar"
+          className="w-10 h-10 rounded-full object-cover border"
+        />
+      ) : (
+        <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold border">
+          {session.user.name?.charAt(0) ?? "U"}
         </div>
+      )}
+
+      <button
+        onClick={handleLogout}
+        className="text-red-500 text-sm font-bold hover:underline"
+      >
+        Logout
+      </button>
+
+    </div>
+  ) : (
+    <div className="flex gap-4">
+      <Link href="/auth/signin" className="px-5 py-2 border rounded-xl hover:bg-gray-50">
+        Login
+      </Link>
+      <Link href="/auth/signup" className="px-5 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+        Register
+      </Link>
+    </div>
+  )}
+</div>
 
       </div>
     </nav>
