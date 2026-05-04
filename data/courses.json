@@ -7,7 +7,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Learn full-stack web development from scratch using HTML, CSS, JavaScript, React and Node.js.",
-    "image": "https://i.postimg.cc/3x3QzSGq/web.jpg",
+    "image": "https://as1.ftcdn.net/jpg/09/25/51/20/1000_F_925512031_MC9XbHPEHIEjO1C0l4zgeD4NtHHud1BZ.jpg",
     "category": "Development"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Master React hooks, context API, and build real-world projects.",
-    "image": "https://i.postimg.cc/ht1fP5hX/react.jpg",
+    "image": "https://as1.ftcdn.net/jpg/03/04/97/12/1000_F_304971233_mQ4xlfnBGSszgzJPYzQnZtWI04ZNmuuP.jpg",
     "category": "Development"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.7,
     "level": "Beginner",
     "description": "Learn design thinking, Figma, wireframing and prototyping.",
-    "image": "https://i.postimg.cc/VLqkW8QH/uiux.jpg",
+    "image": "https://as1.ftcdn.net/jpg/04/16/92/00/1000_F_416920093_yY99Ui01R18ioQU8b7vvCDZSWKm94DRs.jpg",
     "category": "Design"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.6,
     "level": "Beginner",
     "description": "SEO, Facebook Ads, Google Ads and content marketing strategies.",
-    "image": "https://i.postimg.cc/J0S9Gq3x/marketing.jpg",
+    "image": "https://as1.ftcdn.net/jpg/01/95/80/06/1000_F_195800657_6f3eeLN51FNl0qKVJTGMb0UpW6rstARq.jpg",
     "category": "Marketing"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "NumPy, Pandas, Data Visualization and Machine Learning basics.",
-    "image": "https://i.postimg.cc/ZR3H2R7L/python.jpg",
+    "image": "https://as2.ftcdn.net/jpg/05/05/41/39/1000_F_505413960_r4BUfFKXvzMkSCrXUl0HnMK8Bszuq6y4.jpg",
     "category": "Data Science"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.7,
     "level": "Intermediate",
     "description": "Build REST APIs with Express, MongoDB and authentication.",
-    "image": "https://i.postimg.cc/CKZy2qk6/node.jpg",
+    "image": "https://as1.ftcdn.net/jpg/19/28/24/48/1000_F_1928244817_Di2ggAcrfGfgKMkRofG4DHMcil3109kX.jpg",
     "category": "Development"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Build cross-platform mobile apps using Flutter and Dart.",
-    "image": "https://i.postimg.cc/FzB1qQ6x/flutter.jpg",
+    "image": "https://as1.ftcdn.net/jpg/04/75/01/94/1000_F_475019480_qhU59bJx1Eoiko8i8TpJhEyUNctHRqWm.jpg",
     "category": "Mobile Development"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.6,
     "level": "Beginner",
     "description": "Network security, ethical hacking basics and threat protection.",
-    "image": "https://i.postimg.cc/NjFJb9n4/cyber.jpg",
+    "image": "https://as2.ftcdn.net/jpg/04/85/09/55/1000_F_485095549_QPxnkts9VbWxIlxb6mF0n8YIKHu6GCSJ.jpg",
     "category": "Security"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.7,
     "level": "Advanced",
     "description": "Deep dive into Java, Spring Boot and microservices.",
-    "image": "https://i.postimg.cc/8kR6pVQ3/java.jpg",
+    "image": "https://as2.ftcdn.net/jpg/04/42/21/91/1000_F_442219135_kbXNuz82DCCxgEOt2GGAxyo2EvNCA7Q3.jpg",
     "category": "Development"
   },
   {
@@ -106,7 +106,7 @@
     "rating": 4.5,
     "level": "Beginner",
     "description": "Camera basics, lighting techniques and photo editing.",
-    "image": "https://i.postimg.cc/bYz0W3hM/photo.jpg",
+    "image": "https://as1.ftcdn.net/jpg/06/20/67/74/1000_F_620677464_M2SYUJgumOm944ciqZppe0A8f11Vuk7m.jpg",
     "category": "Photography"
   }
 ]

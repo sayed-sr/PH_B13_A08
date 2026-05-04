@@ -12,7 +12,6 @@ export default function AllCourses() {
 
   const [query, setQuery] = useState("")
 
-  // 🔒 Protect entire courses page
   useEffect(() => {
     if (!isPending && !session) {
       router.push("/auth/signin?redirect=/courses")
@@ -21,9 +20,11 @@ export default function AllCourses() {
 
   if (isPending) {
     return (
-      <p className="text-center py-20">
-        Loading...
-      </p>
+      <div className="flex items-center justify-center py-20 px-4">
+        <p className="text-center text-sm sm:text-base">
+          Loading...
+        </p>
+      </div>
     )
   }
 
@@ -34,25 +35,25 @@ export default function AllCourses() {
   )
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
 
-      <h1 className="text-4xl font-bold text-center mb-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10">
         All Courses 📚
       </h1>
 
       {/* Search */}
-      <div className="flex justify-center mb-10">
+      <div className="flex justify-center mb-8 sm:mb-10">
         <input
           type="text"
           placeholder="Search courses..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full max-w-md p-3 border rounded-xl"
+          className="w-full max-w-md p-3 sm:p-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       {/* Courses */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {filteredCourses.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
