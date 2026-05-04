@@ -12,11 +12,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-gray-50">
+
         <Navbar />
+
+
         <main className="min-h-screen max-w-6xl mx-auto px-4">
           {children}
-        </main>
-        <Footer />
+
+
+  </main>
+ <Footer />
         <Toaster />
       </body>
     </html>

@@ -30,18 +30,18 @@ export default function LearningTips() {
       {tips.map((tip, index) => (
         <div
           key={index}
-          className="bg-white border rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition"
+       className="bg-white border rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition"
         >
 
-          <h3 className="font-bold text-base sm:text-lg mb-2 text-blue-600">
-            {tip.title}
+  <h3 className="font-bold text-base sm:text-lg mb-2 text-blue-600">
+         {tip.title}
           </h3>
 
-          <p className="text-gray-600 text-sm">
+     <p className="text-gray-600 text-sm">
             {tip.desc}
-          </p>
+      </p>
 
-        </div>
+    </div>
       ))}
 
     </div>

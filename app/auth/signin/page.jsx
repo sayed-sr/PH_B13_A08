@@ -3,8 +3,11 @@ import LoginPage from "./LoginPage";
 
 export default function Page() {
   return (
+
     <Suspense fallback={<p className="text-center p-10">Loading...</p>}>
-      <LoginPage />
+    
+    
+     <LoginPage />
     </Suspense>
   );
 }

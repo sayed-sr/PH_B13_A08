@@ -29,41 +29,41 @@ export default function TopInstructors() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6">
 
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">
-        Top Instructors 👨‍🏫
+   <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">
+        Top Instructors 
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
 
         {instructors.map((ins, index) => (
           <div
             key={index}
-            className="bg-white border rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition"
+       className="bg-white border rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition"
           >
 
-            {/* Avatar Image (UPDATED) */}
+           
             <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4">
-              <img
+      <img
                 src={ins.image}
                 alt={ins.name}
                 className="w-full h-full object-cover rounded-full border"
-              />
+          />
             </div>
 
-            <h3 className="font-bold text-sm sm:text-base">
+   <h3 className="font-bold text-sm sm:text-base">
               {ins.name}
             </h3>
 
-            <p className="text-xs sm:text-sm text-gray-500">
+  <p className="text-xs sm:text-sm text-gray-500">
               {ins.role}
             </p>
 
-            <span className="inline-block mt-2 sm:mt-3 text-xs bg-gray-100 px-3 py-1 rounded-full">
+   <span className="inline-block mt-2 sm:mt-3 text-xs bg-gray-100 px-3 py-1 rounded-full">
               {ins.expertise}
             </span>
 
-          </div>
-        ))}
+  </div>
+))}
 
       </div>
     </section>
